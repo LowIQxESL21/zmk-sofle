@@ -6,6 +6,14 @@
 #define LANG_EN LC(LS(N1))
 #define LANG_RU LC(LS(N2))
 
+&left_encoder {
+    steps = <40>;
+};
+
+&right_encoder {
+    steps = <40>;
+};
+
 / {
     macros {
         to_ru: to_ru {
@@ -56,6 +64,11 @@
         };
     };
 
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        triggers-per-rotation = <20>;
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
